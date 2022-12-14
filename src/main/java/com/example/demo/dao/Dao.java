@@ -12,7 +12,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component public class Dao
+@Component 
+public class Dao
 {
     private static final String SQL_SELECT_PRODUCT = "SELECT * FROM products";
 
