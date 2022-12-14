@@ -24,7 +24,8 @@ class ServiceTest
     @MockBean
     Dao dao;
 
-    @Test void testGetByRegexFromFirstTestDescriptionCorrect()
+    @Test 
+    void testGetByRegexFromFirstTestDescriptionCorrect()
     {
         Mockito.when(dao.getProductByRegex())
                 .thenReturn(List.of(new Product(1, "Enam", "description"),
@@ -34,7 +35,8 @@ class ServiceTest
                         service.getProductByRegex("[^E].*$"));
     }
 
-    @Test void testGetByRegexFromFirstTestDescriptionIncorrect()
+    @Test 
+    void testGetByRegexFromFirstTestDescriptionIncorrect()
     {
         Mockito.when(dao.getProductByRegex())
                 .thenReturn(List.of(new Product(1, "Enam", "description"),
@@ -42,7 +44,8 @@ class ServiceTest
         Assertions.assertNotSame(List.of(new Product(1, "Enam", "description")),
                 service.getProductByRegex("[^E].*$"));
     }
-    @Test void testGetByRegexSecondTestDescriptionCorrect()
+    @Test 
+    void testGetByRegexSecondTestDescriptionCorrect()
     {
         Mockito.when(dao.getProductByRegex())
                 .thenReturn(List.of(new Product(1, "eva-theBest", "description"),
@@ -51,7 +54,8 @@ class ServiceTest
                 .assertEquals(List.of(new Product(2, "Ukraine", "description")),
                         service.getProductByRegex("[^.*eva].*$"));
     }
-    @Test void testGetByRegexSecondTestDescriptionIncorrect()
+    @Test 
+    void testGetByRegexSecondTestDescriptionIncorrect()
     {
         Mockito.when(dao.getProductByRegex())
                 .thenReturn(List.of(new Product(1, "eva-theBest", "description"),
